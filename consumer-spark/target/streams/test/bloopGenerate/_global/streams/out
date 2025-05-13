@@ -1,0 +1,4 @@
+[debug] [consumer-spark-test] Classpath dependencies List()
+[debug] [consumer-spark-test] Dependencies from configurations List(consumer-spark)
+[debug] Bloop wrote the configuration of project 'consumer-spark-test' to 'C:\Users\moham\Documents\PERSO\SCHOOL\S2\S2 - spark streaming\Projet\velib-streaming\consumer-spark\.bloop\consumer-spark-test.json'
+[success] Generated .bloop\consumer-spark-test.json

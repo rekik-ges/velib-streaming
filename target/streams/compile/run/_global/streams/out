@@ -1,0 +1,75 @@
+[0m[[0m[31merror[0m] [0m[0morg.apache.spark.sql.streaming.StreamingQueryException: org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: describeTopics[0m
+[0m[[0m[31merror[0m] [0m[0m=== Streaming Query ===[0m
+[0m[[0m[31merror[0m] [0m[0mIdentifier: [id = 1d36675d-c64c-4251-b623-7feff9fc6923, runId = 5ca0c10a-059a-4e08-8c07-035daff5ae9e][0m
+[0m[[0m[31merror[0m] [0m[0mCurrent Committed Offsets: {}[0m
+[0m[[0m[31merror[0m] [0m[0mCurrent Available Offsets: {}[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0mCurrent State: ACTIVE[0m
+[0m[[0m[31merror[0m] [0m[0mThread State: RUNNABLE[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0mLogical Plan:[0m
+[0m[[0m[31merror[0m] [0m[0mWriteToMicroBatchDataSource org.apache.spark.sql.execution.streaming.ConsoleTable$@670f2b1d, 1d36675d-c64c-4251-b623-7feff9fc6923, Append[0m
+[0m[[0m[31merror[0m] [0m[0m+- Project [get_json_object(json#21, $.data.stations[0].stationCode) AS stationCode#23, cast(get_json_object(json#21, $.data.stations[0].num_bikes_available) as int) AS availableBikes#24, cast(get_json_object(json#21, $.data.stations[0].num_docks_available) as int) AS availableDocks#25][0m
+[0m[[0m[31merror[0m] [0m[0m   +- Project [cast(value#8 as string) AS json#21][0m
+[0m[[0m[31merror[0m] [0m[0m      +- StreamingDataSourceV2Relation [key#7, value#8, topic#9, partition#10, offset#11L, timestamp#12, timestampType#13], org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaScan@79c29b73, KafkaV2[Subscribe[velib]][0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:333)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:207)[0m
+[0m[[0m[31merror[0m] [0m[0mCaused by: java.util.concurrent.ExecutionException: org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: describeTopics[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:395)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2005)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:165)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.ConsumerStrategy.retrieveAllPartitions(ConsumerStrategy.scala:66)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.ConsumerStrategy.retrieveAllPartitions$(ConsumerStrategy.scala:65)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.SubscribeStrategy.retrieveAllPartitions(ConsumerStrategy.scala:102)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.SubscribeStrategy.assignedTopicPartitions(ConsumerStrategy.scala:113)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.KafkaOffsetReaderAdmin.$anonfun$partitionsAssignedToAdmin$1(KafkaOffsetReaderAdmin.scala:499)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.KafkaOffsetReaderAdmin.withRetries(KafkaOffsetReaderAdmin.scala:518)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.KafkaOffsetReaderAdmin.partitionsAssignedToAdmin(KafkaOffsetReaderAdmin.scala:498)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.KafkaOffsetReaderAdmin.fetchLatestOffsets(KafkaOffsetReaderAdmin.scala:297)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.KafkaMicroBatchStream.$anonfun$getOrCreateInitialPartitionOffsets$1(KafkaMicroBatchStream.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:201)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.KafkaMicroBatchStream.getOrCreateInitialPartitionOffsets(KafkaMicroBatchStream.scala:246)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.kafka010.KafkaMicroBatchStream.initialOffset(KafkaMicroBatchStream.scala:98)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$getStartOffset$2(MicroBatchExecution.scala:455)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:201)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.getStartOffset(MicroBatchExecution.scala:455)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$constructNextBatch$4(MicroBatchExecution.scala:489)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:411)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:409)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$constructNextBatch$2(MicroBatchExecution.scala:488)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.map(List.scala:246)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.map(List.scala:79)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$constructNextBatch$1(MicroBatchExecution.scala:477)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcZ$sp.apply(JFunction0$mcZ$sp.scala:17)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.withProgressLocked(MicroBatchExecution.scala:802)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.constructNextBatch(MicroBatchExecution.scala:473)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:266)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:411)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:409)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:247)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:237)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:306)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:284)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:207)[0m
+[0m[[0m[31merror[0m] [0m[0mCaused by: org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: describeTopics[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) org.apache.spark.sql.streaming.StreamingQueryException: org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: describeTopics[0m
+[0m[[0m[31merror[0m] [0m[0m=== Streaming Query ===[0m
+[0m[[0m[31merror[0m] [0m[0mIdentifier: [id = 1d36675d-c64c-4251-b623-7feff9fc6923, runId = 5ca0c10a-059a-4e08-8c07-035daff5ae9e][0m
+[0m[[0m[31merror[0m] [0m[0mCurrent Committed Offsets: {}[0m
+[0m[[0m[31merror[0m] [0m[0mCurrent Available Offsets: {}[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0mCurrent State: ACTIVE[0m
+[0m[[0m[31merror[0m] [0m[0mThread State: RUNNABLE[0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0mLogical Plan:[0m
+[0m[[0m[31merror[0m] [0m[0mWriteToMicroBatchDataSource org.apache.spark.sql.execution.streaming.ConsoleTable$@670f2b1d, 1d36675d-c64c-4251-b623-7feff9fc6923, Append[0m
+[0m[[0m[31merror[0m] [0m[0m+- Project [get_json_object(json#21, $.data.stations[0].stationCode) AS stationCode#23, cast(get_json_object(json#21, $.data.stations[0].num_bikes_available) as int) AS availableBikes#24, cast(get_json_object(json#21, $.data.stations[0].num_docks_available) as int) AS availableDocks#25][0m
+[0m[[0m[31merror[0m] [0m[0m   +- Project [cast(value#8 as string) AS json#21][0m
+[0m[[0m[31merror[0m] [0m[0m      +- StreamingDataSourceV2Relation [key#7, value#8, topic#9, partition#10, offset#11L, timestamp#12, timestampType#13], org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaScan@79c29b73, KafkaV2[Subscribe[velib]][0m

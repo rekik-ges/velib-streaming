@@ -1,0 +1,4 @@
+[debug] [velib-streaming-test] Classpath dependencies List()
+[debug] [velib-streaming-test] Dependencies from configurations List(velib-streaming)
+[debug] Bloop wrote the configuration of project 'velib-streaming-test' to 'C:\Users\moham\Documents\PERSO\SCHOOL\S2\S2 - spark streaming\Projet\velib-streaming\.bloop\velib-streaming-test.json'
+[success] Generated .bloop\velib-streaming-test.json

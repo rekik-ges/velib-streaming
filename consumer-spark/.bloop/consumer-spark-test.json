@@ -1,0 +1,167 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "consumer-spark-test",
+        "directory": "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark",
+        "workspaceDir": "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark",
+        "sources": [
+            "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\src\\test\\scala",
+            "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\src\\test\\scala-2.12",
+            "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\src\\test\\scala-2",
+            "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\src\\test\\java",
+            "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\target\\scala-2.12\\src_managed\\test"
+        ],
+        "dependencies": [
+            "consumer-spark"
+        ],
+        "classpath": [
+            "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\.bloop\\consumer-spark\\scala-2.12\\classes",
+            "C:\\Users\\moham\\.sbt\\boot\\scala-2.12.20\\lib\\scala-library.jar"
+        ],
+        "out": "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\.bloop\\consumer-spark",
+        "classesDir": "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\.bloop\\consumer-spark\\scala-2.12\\test-classes",
+        "resources": [
+            "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\src\\test\\resources",
+            "C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark\\target\\scala-2.12\\resource_managed\\test"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.12.20",
+            "options": [
+                
+            ],
+            "jars": [
+                "C:\\Users\\moham\\.sbt\\boot\\scala-2.12.20\\lib\\scala-library.jar",
+                "C:\\Users\\moham\\.sbt\\boot\\scala-2.12.20\\lib\\scala-compiler.jar",
+                "C:\\Users\\moham\\.sbt\\boot\\scala-2.12.20\\lib\\scala-reflect.jar",
+                "C:\\Users\\moham\\.sbt\\boot\\scala-2.12.20\\lib\\scala-xml_2.12-2.3.0.jar"
+            ],
+            "setup": {
+                "order": "mixed",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "zio.test.sbt.ZTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "weaver.framework.CatsEffect"
+                    ]
+                },
+                {
+                    "names": [
+                        "hedgehog.sbt.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "C:\\Program Files\\Java\\jdk-11",
+                "options": [
+                    "-Duser.dir=C:\\Users\\moham\\Documents\\PERSO\\SCHOOL\\S2\\S2 - spark streaming\\Projet\\velib-streaming\\consumer-spark"
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.20",
+                    "configurations": "default",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\moham\\.sbt\\boot\\scala-2.12.20\\lib\\scala-library.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\moham\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.12.20\\scala-library-2.12.20-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.20",
+                    "configurations": "optional",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "C:\\Users\\moham\\.sbt\\boot\\scala-2.12.20\\lib\\scala-library.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "C:\\Users\\moham\\AppData\\Local\\Coursier\\Cache\\v1\\https\\repo1.maven.org\\maven2\\org\\scala-lang\\scala-library\\2.12.20\\scala-library-2.12.20-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}

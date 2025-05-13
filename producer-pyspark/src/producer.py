@@ -7,7 +7,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 VELIB_API = (
-  "https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_information.json"
+  "https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_status.json"
 )
 
 
@@ -25,7 +25,7 @@ while True:
         time.sleep(30)
         continue
 
-    #  Transforme le jdon global en mini‑batches (un dictionnaire par station)
+    #  Transforme le json global en mini‑batches (un dictionnaire par station)
     for st in stations:
         record = {
             "station_id": st["station_id"],
