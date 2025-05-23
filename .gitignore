@@ -1,9 +1,25 @@
-*.class
-*.log
+# Dossiers Scala/SBT
+target/
+project/target/
+project/project/
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-# Ignorer tous les virtualenv
+# Fichiers JSON générés
+*.json
+processed_zone/
+checkpoint/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 venv/
-producer-pyspark/venv/
-consumer-spark/venv/
+.env
+
+# IDEs
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

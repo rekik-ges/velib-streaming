@@ -14,3 +14,18 @@ pip install pyspark requests kafka-python
 
 # Depuis le dossier producer-pyspark
 python src/producer.py
+
+# 1. Lancer Kafka
+docker-compose up -d
+
+# 2. Lancer le Producer (Scala)
+sbt run # dans producer-scala/
+
+# 3. Lancer le Consumer (Scala + Spark)
+sbt run # dans consumer-spark/
+
+# 4. Lancer le Dashboard
+streamlit run dashboard/dashboard.py
+( s'assurer d'etre dans un env virtuel rt pip install streamlit pandas plotly
+)
+ http://localhost:8501/
